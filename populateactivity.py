@@ -16,10 +16,9 @@ def populate():
         print(fname)
         ftz=fake.timezone()
         members_records=Members.objects.create(userid=fid,real_name=fname, tz=ftz)
-        for i in range(0,randint(0,4)):
-            if i==0:
-                pass
-            else:
-               members_records.activity_periods.add(Activity_Periods.objects.create(start_time=fake.date_time(),end_time=fake.date_time()))
+        members_records.activity_periods.add(Activity_Periods.objects.create(start_time=fake.date_time(),end_time=fake.date_time()))
+
+        for i in range(0,randint(0,8)):
+            members_records.activity_periods.add(Activity_Periods.objects.create(start_time=fake.date_time(),end_time=fake.date_time()))
 
 populate()
