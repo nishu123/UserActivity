@@ -8,6 +8,7 @@ urlpatterns = [
     # path('', api_detail_customer_view, name="detail"),
     # path('update/', api_update_customer_view, name="update"),
      path('list/', MemberActivity, name="detail"),
+     path('detail/<str:name>', Memberdetail, name="member_detail"),
    
 
    

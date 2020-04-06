@@ -11,3 +11,10 @@ def MemberActivity(request):
         my_json_string = json.dumps(data)
         return HttpResponse(my_json_string,content_type='application/json')
         
+def Memberdetail(request,name):
+    services = Members.objects.filter(real_name=name)
+    data = MembersSerializers(services, many=True).data
+    my_json_string = json.dumps(data)
+    return HttpResponse(my_json_string,content_type='application/json')
+
+        
