@@ -10,7 +10,7 @@ fake=Faker()
 from random import *
 
 def populate():
-    for i in range(25):
+    for i in range(40):
         fid=fake.pystr()
         fname=fake.name()
         print(fname)
